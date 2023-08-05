@@ -1,0 +1,14 @@
+@import '../../../src/styles/colors.scss';
+
+.header {
+    background-color: $gray-cards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem 0;
+    gap: 10px;
+
+    img {
+        width: 35px;
+    }
+}
