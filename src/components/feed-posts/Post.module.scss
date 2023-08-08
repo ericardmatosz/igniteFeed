@@ -3,7 +3,7 @@
 .post {
     background-color: $gray-cards;
     border-radius: 8px;
-    padding: 2.875rem;
+    padding: 2rem;
 
     & + .post {
         margin-top: 2rem;
@@ -133,5 +133,9 @@
             visibility: visible;
             max-height: none;
         }   
+    }
+
+    .commentList {
+        margin-top: 1.5rem;
     }
 }   
