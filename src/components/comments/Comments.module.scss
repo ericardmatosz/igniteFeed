@@ -1,0 +1,93 @@
+@import '../../styles/colors.scss';
+
+.comments {
+
+    & + .comments {
+        margin-top: 1.3rem;
+    }
+    display: flex;
+    gap: 1rem;
+
+    img {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 8px;
+    }
+        
+    .commentBox {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        .commentContent {
+            background-color: $gray-comment;
+            border-radius: 9px;
+            padding: 1rem;
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                .authorInfos {
+                    display: flex;
+                    flex-direction: column;
+                    
+                    strong {
+                        display: block;
+                        font-size: 0.875rem;
+                        color: $white;
+                        line-height: 1.6rem;
+
+                        span {
+                            color: $gray-text-support;
+                        }
+                    }
+
+                    time {
+                        color: $gray-text-support;
+                        font-size: 0.75rem;
+                        margin-bottom: 1rem;
+                    }
+                }
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                    color: $gray-text-support;
+                    line-height: none;
+                    height: 24px;
+                    cursor: pointer;
+                }
+            }
+
+            p {
+                font-size: 0.875rem;
+            }
+        }
+
+        .commentInfos {
+            & > button {
+                background-color: transparent;
+                border: none;
+                color: $gray-text-support;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                margin-top: 1rem;
+                font-size: 0.875rem;
+
+                svg {
+                    margin-right: 0.3rem;
+                }
+
+                span::before {
+                    content: '\2022';
+                    padding: 0 0.25rem;
+                }
+            }
+        }
+    }
+}
