@@ -19,11 +19,9 @@
         img {
             width: 3.75rem;
             height: 3.75rem;
-
             border: 4px solid $gray-background;
             border-radius: 8px;
             outline: 2px solid $green;
-            
             margin-top: calc(0px - 1.5rem - 6px);
             object-fit: cover;
         }
@@ -50,15 +48,12 @@
             background-color: transparent;
             border: 1px solid #00875F;
             border-radius: 8px;
-
             height: 50px;
             width: 100%;
             padding: 0 1.5rem;
-            
             text-decoration: none;
             color: $green;
             font-weight: bold;
-
             display: flex;
             align-items: center;
             justify-content: center;
