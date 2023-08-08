@@ -71,13 +71,12 @@
                 background-color: transparent;
                 border: none;
                 color: $gray-text-support;
-
                 display: flex;
                 justify-content: center;
                 align-items: center;
-
                 margin-top: 1rem;
                 font-size: 0.875rem;
+                cursor: pointer;
 
                 svg {
                     margin-right: 0.3rem;
