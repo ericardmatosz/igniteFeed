@@ -1,12 +1,14 @@
-import style from './Post.module.scss';
 import { Comments } from '../comments/Comments';
+import { Avatar } from '../avatar/Avatar';
+
+import style from './Post.module.scss';
 
 export function Posts() {
     return(
         <article className={style.post}>
             <header>
                 <div className={style.author}>
-                    <img src="https://github.com/ericardmatosz.png" />
+                    <Avatar hasBorder={true} src="https://github.com/ericardmatosz.png" />
 
                     <div className={style.authorInfos}>
                         <strong>Érica Matos</strong>
