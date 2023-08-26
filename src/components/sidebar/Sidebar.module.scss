@@ -1,0 +1,60 @@
+@import '../../styles/colors.scss';
+
+.sidebar {
+    background-color: $gray-cards;
+    border-radius: 8px;
+    overflow: hidden;
+
+    & > img {
+        height: 72px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .userProfile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: calc(0px - 1.5rem - 6px);
+
+        strong {
+            color: $gray-text-titles;
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+
+        span {
+            color: $gray-text-support;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+    }
+
+    .editButton {
+        border-top: 1px solid $gray-divider;
+        margin-top: 1.5rem;
+        padding: 1.5rem 2rem 2rem;
+
+        a {
+            background-color: transparent;
+            border: 1px solid #00875F;
+            border-radius: 8px;
+            height: 50px;
+            width: 100%;
+            padding: 0 1.5rem;
+            text-decoration: none;
+            color: $green;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            &:hover {
+                background-color: $light-green;
+                color: $white;
+                transition: 0.4s;
+            }
+        }
+    }
+}

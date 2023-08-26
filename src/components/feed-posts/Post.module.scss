@@ -1,0 +1,141 @@
+@import '../../styles/colors.scss';
+
+.post {
+    background-color: $gray-cards;
+    border-radius: 8px;
+    padding: 2rem;
+
+    & + .post {
+        margin-top: 2rem;
+    }
+
+    & > header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            img {
+                width: 3rem;
+                height: 3rem;
+                border: 4px solid $gray-background;
+                border-radius: 8px;
+                outline: 2px solid $green;
+                object-fit: cover;
+            }
+
+            .authorInfos {
+                display: flex;
+                flex-direction: column;
+    
+                strong {
+                    font-weight: bold;
+                    line-height: 1.6;
+                    color: $gray-text-titles;
+                }
+    
+                span {
+                    line-height: 1.6;
+                    color: $gray-text-support;
+                    font-size: 0.875rem;
+                }
+            }
+        }
+
+        time {
+            font-size: 0.875rem;
+            color: $gray-text-support;
+        }
+    }
+
+    .postContent {
+        margin-top: 1.5rem;
+        line-height: 1.6;
+
+        p {
+            display: flex;
+            gap: 4px;
+
+            a {
+                color: $green;
+                font-weight: bold;
+                cursor: pointer;
+                &:hover {
+                    color: $light-green;
+                }
+            }
+
+            & + p {
+                margin-top: 1rem;
+            }
+        }
+    }
+
+    .formComment {
+        margin-top: 1rem;
+        border-top: 1px solid $gray-divider;
+        padding-top: 1.5rem;
+
+        display: flex;
+        flex-direction: column;
+
+        & > strong {
+            margin-bottom: 1rem
+        }
+
+        textarea {
+            background-color: $gray-background;
+            border: solid 1px $green;
+            border-radius: 8px;
+            resize: none;
+            height: 6rem;
+            padding: 0.8125rem;
+            color: $gray-placeholder;
+
+            &::placeholder {
+                line-height: 1.4;
+                
+            }
+        }
+
+        footer {
+            visibility: hidden;
+            max-height: 0;
+
+            button[type='submit'] {
+                margin-top: 1rem;
+                width: 6rem;
+                height: 3rem;
+    
+                cursor: pointer;
+    
+                font-weight: bold;
+                color: $white;
+    
+                background-color: $green;
+                border: none;
+                border-radius: 8px;
+    
+    
+    
+                &:hover {
+                    background-color: $light-green;
+                    transition: background-color 0.2s;
+                }
+            }
+        }
+
+        &:focus-within footer{
+            visibility: visible;
+            max-height: none;
+        }   
+    }
+
+    .commentList {
+        margin-top: 1.5rem;
+    }
+}   
