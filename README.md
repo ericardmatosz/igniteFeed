@@ -30,8 +30,8 @@ Was applied concepts as:
 Desktop and Mobile version visualization
 
 <div>
-   <img src='https://live.staticflickr.com/65535/53143604786_66c66377e6_c.jpg' width='700'>
-   <img src='https://live.staticflickr.com/65535/53143608576_323e9e2b61_c.jpg' width='133'>
+   <img src='https://live.staticflickr.com/65535/53143604786_66c66377e6_c.jpg' width='500'>
+   <img src='https://live.staticflickr.com/65535/53143608576_323e9e2b61_c.jpg' width='93'>
 </div>
   
 ## 🤖 How do I start the project?
