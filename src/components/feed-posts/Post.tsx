@@ -1,6 +1,6 @@
 import { format, formatDistanceToNow } from "date-fns";
 
-import { Avatar } from '../Avatar/Avatar';
+import { Avatar } from '../Avatar';
 import { Comments } from '../comments/Comments';
 
 import { ptBR } from "date-fns/locale/pt-BR";
