@@ -80,10 +80,10 @@ export function Posts({ author, content, publishedAt }: PostProps) {
       <div className={style.postContent}>
         {content.map((line: PostContent) => {
           if (line.type === "paragraph") {
-            return <p>{line.content}</p>;
+            return <p key={line.content}>{line.content}</p>;
           } else if (line.type === "link") {
             return (
-              <p>
+              <p key={line.content}>
                 <a href="#">{line.content}</a>
               </p>
             );
@@ -110,7 +110,11 @@ export function Posts({ author, content, publishedAt }: PostProps) {
       <div className={style.commentList}>
         {comments.map((comment) => {
           return (
-            <Comments content={comment} deleteComment={handleDeleteComment} />
+            <Comments
+              key={comment}
+              content={comment}
+              deleteComment={handleDeleteComment}
+            />
           );
         })}
       </div>
