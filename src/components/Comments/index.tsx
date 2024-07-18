@@ -4,8 +4,14 @@ import { Avatar } from "../Avatar";
 import { useState } from "react";
 import styles from "./styles.module.scss";
 
-export function Comments({ content, deleteComment }: any) {
+type CommentProps = {
+  content: string;
+  deleteComment: (deleteComment: string) => void;
+};
+
+export function Comments({ content, deleteComment }: CommentProps) {
   const [like, setLike] = useState(0);
+
   function handleCommentDelete() {
     deleteComment(content);
   }
@@ -17,6 +23,7 @@ export function Comments({ content, deleteComment }: any) {
   return (
     <div className={styles.comments}>
       <Avatar hasBorder={false} src="https://github.com/ericardmatosz.png" />
+
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
           <header>

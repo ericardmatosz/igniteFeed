@@ -99,6 +99,7 @@ export function Posts({ author, content, publishedAt }: PostProps) {
           value={newComment}
           placeholder="Escreva um comentário..."
           onChange={handleNewComment}
+          required
         />
 
         <footer>
