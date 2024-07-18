@@ -1,17 +1,35 @@
 import { format, formatDistanceToNow } from "date-fns";
+import { ptBR } from "date-fns/locale/pt-BR";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 import { Avatar } from "../Avatar";
 import { Comments } from "../Comments";
 
-import { ptBR } from "date-fns/locale/pt-BR";
-import { useState } from "react";
-
 import style from "./styles.module.scss";
 
-export function Posts({ author, content, publishedAt }: any) {
-  const [comments, setComments] = useState(["Posts muito bacanas, hein?!"]);
+type PostContent = {
+  type: "paragraph" | "link";
+  content: string;
+};
 
+type PostProps = {
+  author: {
+    avatarUrl: string;
+    name: string;
+    role: string;
+  };
+  content: [PostContent];
+  publishedAt: Date;
+};
+
+export function Posts({ author, content, publishedAt }: PostProps) {
+  const [comments, setComments] = useState(["Post muito legal!"]);
   const [newComment, setNewComment] = useState("");
+
+  const publisedAtRelativeToNow = formatDistanceToNow(publishedAt, {
+    locale: ptBR,
+    addSuffix: true,
+  });
 
   const publishedDateFormated = format(
     publishedAt,
@@ -21,26 +39,19 @@ export function Posts({ author, content, publishedAt }: any) {
     }
   );
 
-  const publisedAtRelativeToNow = formatDistanceToNow(publishedAt, {
-    locale: ptBR,
-    addSuffix: true,
-  });
-
-  function handleNewComment(event: any) {
-    setNewComment(event.target.value);
+  function handleNewComment(e: ChangeEvent<HTMLTextAreaElement>) {
+    setNewComment(e.target.value);
   }
 
-  function handleCreateNewComment(event: any) {
-    event?.preventDefault();
-
+  function handleCreateNewComment(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
     setComments([...comments, newComment]);
-
     setNewComment("");
   }
 
   function handleDeleteComment(deleteComment: string) {
-    const newCommentList = comments.filter((teste) => {
-      return teste !== deleteComment;
+    const newCommentList = comments.filter((comment) => {
+      return comment !== deleteComment;
     });
 
     setComments(newCommentList);
@@ -67,7 +78,7 @@ export function Posts({ author, content, publishedAt }: any) {
       </header>
 
       <div className={style.postContent}>
-        {content.map((line: any) => {
+        {content.map((line: PostContent) => {
           if (line.type === "paragraph") {
             return <p>{line.content}</p>;
           } else if (line.type === "link") {
