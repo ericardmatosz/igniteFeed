@@ -1,5 +1,5 @@
-import { Avatar } from '../avatar/Avatar';
 import { PencilSimpleLine } from 'phosphor-react';
+import { Avatar } from '../Avatar/Avatar';
 
 import style from './Sidebar.module.scss';
 

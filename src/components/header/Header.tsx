@@ -1,5 +1,5 @@
-import style from './Header.module.scss'
 import igniteLogo from '../../assets/ignite-simbol.svg';
+import style from './Header.module.scss';
 
 export function Header() {
     return (
@@ -7,6 +7,5 @@ export function Header() {
           <img src={igniteLogo} alt=''/>
           <strong>Ignite Feed</strong> 
       </header>
-       
     );
 }
